@@ -1,6 +1,7 @@
 __author__ = "KeyWeeUsr"
 __version__ = "1.0"
 
+import os
 from kivy.app import App
 from kivy.clock import Clock
 from functools import partial
@@ -47,7 +48,7 @@ class PlayerFish(Image):
                             if len(self.parent.parent.parent.ids.fmed.children) > 4:
                                 self.parent.parent.parent.ids.fmed.clear_widgets()
                                 self.parent.parent.parent.ids.fbig.add_widget(Image(source='fish_l.png', size_hint_x=None, width=0.2*self.parent.parent.parent.ids.fbig.size[0]))
-                        if self.body_size == 10:
+                        if self.body_size == 25:
                             self.parent.parent.parent.parent.ids.highscore.text = self.parent.parent.parent.ids.score.text
                             self.finish()
                     else:
@@ -116,6 +117,7 @@ class GameScreen(Screen):
     two = 0
     func = None
     player_speed = 0.01
+    path = os.path.dirname(os.path.abspath(__file__))
 
     def use(self, direction, active):
         if active and self.manager.current == 'game':
@@ -158,6 +160,7 @@ class Body(ScreenManager):
     botheight = 0
     spawn_time = 2
     fish_size = [10, 5]
+    path = os.path.dirname(os.path.abspath(__file__))
 
     def __init__(self, **kwargs):
         super(Body, self).__init__(**kwargs)

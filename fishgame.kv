@@ -3,7 +3,7 @@
         Color:
             rgba: 1,1,1,1
         Rectangle:
-            source: 'ocean.jpg'
+            source: root.path+'/ocean.jpg'
             size: self.size
             pos: self.pos
     Screen:
@@ -12,15 +12,19 @@
             size_hint: 0.8,0.8
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
             Buttlab:
+                font_name: root.path+'/kenpixel_blocks.ttf'
                 text: 'Play'
                 on_release: root.current = 'game'; root.running = 1
             Buttlab:
+                font_name: root.path+'/kenpixel_blocks.ttf'
                 text: 'Instructions'
                 on_release: root.current = 'instructions'
             Buttlab:
+                font_name: root.path+'/kenpixel_blocks.ttf'
                 text: 'About'
                 on_release: root.current = 'about'
             Buttlab:
+                font_name: root.path+'/kenpixel_blocks.ttf'
                 text: 'Exit game'
                 on_release: exit()
     GameScreen:
@@ -32,13 +36,14 @@
             Label:
                 font_size: 55
                 text: 'Score:'
-                font_name: 'kenpixel_blocks.ttf'
+                font_name: root.path+'/kenpixel_blocks.ttf'
             Label:
                 id: highscore
                 font_size: 50
-                font_name: 'kenpixel_blocks.ttf'
+                font_name: root.path+'/kenpixel_blocks.ttf'
             BoxLayout:
                 Buttlab:
+                    font_name: root.path+'/kenpixel_blocks.ttf'
                     size_hint: [0.2, 0.2]
                     text: 'Again!'
                     on_release: root.restart()
@@ -50,7 +55,7 @@
                 font_size: 30
                 size_hint_y: None
                 height: self.texture_size[1]*3
-                font_name: 'kenpixel_blocks.ttf'
+                font_name: root.path+'/kenpixel_blocks.ttf'
             Label:
                 font_size: 15
                 halign: 'center'
@@ -58,9 +63,10 @@
                 size_hint_y: None
                 height: self.texture_size[1]
                 text_size: self.width, None
-                font_name: 'kenpixel_blocks.ttf'
+                font_name: root.path+'/kenpixel_blocks.ttf'
             Widget:
             Buttlab:
+                font_name: root.path+'/kenpixel_blocks.ttf'
                 size_hint_y: None
                 height: self.parent.size[1]*0.06
                 text: 'Continue!'
@@ -73,7 +79,7 @@
                 font_size: 30
                 size_hint_y: None
                 height: self.texture_size[1]*3
-                font_name: 'kenpixel_blocks.ttf'
+                font_name: root.path+'/kenpixel_blocks.ttf'
             ScrollView:
                 Label:
                     font_size: 15
@@ -82,9 +88,10 @@
                     size_hint_y: None
                     height: self.texture_size[1]
                     text_size: self.width, None
-                    font_name: 'kenpixel_blocks.ttf'
+                    font_name: root.path+'/kenpixel_blocks.ttf'
             Widget:
             Buttlab:
+                font_name: root.path+'/kenpixel_blocks.ttf'
                 size_hint_y: None
                 height: self.parent.size[1]*0.06
                 text: 'Back!'
@@ -97,7 +104,7 @@
                 font_size: 30
                 size_hint_y: None
                 height: self.texture_size[1]*3
-                font_name: 'kenpixel_blocks.ttf'
+                font_name: root.path+'/kenpixel_blocks.ttf'
             ScrollView:
                 Label:
                     font_size: 15
@@ -106,9 +113,10 @@
                     size_hint_y: None
                     height: self.texture_size[1]
                     text_size: self.width, None
-                    font_name: 'kenpixel_blocks.ttf'
+                    font_name: root.path+'/kenpixel_blocks.ttf'
             Widget:
             Buttlab:
+                font_name: root.path+'/kenpixel_blocks.ttf'
                 size_hint_y: None
                 height: self.parent.size[1]*0.06
                 text: 'Back!'
@@ -138,7 +146,7 @@
                 id: score
                 text: '0'
                 pos_hint: {'top':1.45, 'right':1.1}
-                font_name: 'kenpixel_blocks.ttf'
+                font_name: root.path+'/kenpixel_blocks.ttf'
         BoxLayout:
             id: controls
             size_hint: [1, 0.3]
@@ -199,7 +207,6 @@
     on_press: self.color=(1,1,1,0.4)
     on_release: self.color=(1,1,1,1)
 <Buttlab@ButtonBehavior+Label>
-    font_name: 'kenpixel_blocks.ttf'
     font_size: 30
 <BoxVert@BoxLayout>:
     orientation: 'vertical'
