@@ -8,7 +8,7 @@ As a kid I played a similar game with all those colorful fish and pretty animati
 I'd like to thank Kenney (http://kenney.nl) and OpenClipartVectors (https://pixabay.com/en/users/OpenClipartVectors-30363) for CC0 assets. If you experience any bugs or weird things, please let me know or feel free to contribute.
 
 Fish is written in Python and runs under Kivy framework.
-You can clone the repository to your /sdcard/kivy/ if you use Kivy Launcher on android
+You can clone the repository to your /sdcard/kivy/ if you use Kivy Launcher on android or download only [APK](https://github.com/KeyWeeUsr/Fish/tree/master/bin). For using the APK you need to enable installation from "Unknown sources".
 
 License
 -------
