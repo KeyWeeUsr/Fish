@@ -1,3 +1,4 @@
+#:import App kivy.app.App
 <Body>:
     canvas:
         Color:
@@ -26,7 +27,7 @@
             Buttlab:
                 font_name: root.path+'/kenpixel_blocks.ttf'
                 text: 'Exit game'
-                on_release: exit()
+                on_release: App().stop()
     GameScreen:
         id: game
         name: 'game'
@@ -84,7 +85,7 @@
                 Label:
                     font_size: 15
                     halign: 'center'
-                    text: "If you play the game on a PC, you can use arrows or WASD to control your fish and Pause&Escape keys on your keyboard to pause or quit the game.\n\nMobile version comes with special control bar on the bottom of the screen."
+                    text: "If you play the game on a PC, you can use arrows or WASD to control your fish, P to pause game and Escape key on your keyboard to quit the game.\n\nMobile version comes with special control bar on the bottom of the screen."
                     size_hint_y: None
                     height: self.texture_size[1]
                     text_size: self.width, None
@@ -155,7 +156,7 @@
                     source: 'sound.png'
                 Buttim:
                     source: 'quit.png'
-                    on_release: exit()
+                    on_release: App().stop()
             Widget:
             GridLayout:
                 cols: 3

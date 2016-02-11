@@ -194,8 +194,11 @@ class Body(ScreenManager):
         elif keycode[1] == 'd':
             self.ids.game.use('right', 1)
         elif keycode[1] == 'escape':
-            exit()
-        elif keycode[1] == 'pause':
+            try:
+                App().stop()
+            except:
+                pass
+        elif keycode[1] == 'p':
             self.pause_game()
         return True
 
@@ -304,6 +307,9 @@ class Body(ScreenManager):
 
 
 class FishGame(App):
+    title = 'Fish'
+    icon = 'icon32.png'
+
     def build(self):
         return Body()
 
