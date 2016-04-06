@@ -1,4 +1,3 @@
-#:import App kivy.app.App
 <Body>:
     canvas:
         Color:
@@ -27,7 +26,7 @@
             Buttlab:
                 font_name: root.path+'/kenpixel_blocks.ttf'
                 text: 'Exit game'
-                on_release: App().stop()
+                on_release: root.app.stop()
     GameScreen:
         id: game
         name: 'game'
@@ -91,6 +90,7 @@
                     text_size: self.width, None
                     font_name: root.path+'/kenpixel_blocks.ttf'
             Widget:
+                size_hint_y: .1
             Buttlab:
                 font_name: root.path+'/kenpixel_blocks.ttf'
                 size_hint_y: None
@@ -110,12 +110,13 @@
                 Label:
                     font_size: 15
                     halign: 'center'
-                    text: "Hi, I'm Peter. As a kid I played a similar game with all those colorful fish and pretty animations. Therefore I've made my own version to bring it back and share some code. I'd like to thank\nKenney\n(http://kenney.nl)\n\nand\n\nOpenClipartVectors\n(https://pixabay.com/en/users/OpenClipartVectors-30363)\nfor CC0 assets.\n\n If you experience any bugs or weird things, please let me know or feel free to contribute. You can find me and the code on https://github.com/KeyWeeUsr"
+                    text: "Hi, I'm Peter. As a kid I played a similar game with all those colorful fish and pretty animations. Therefore I've made my own version to bring it back and share some code. I'd like to thank\nKenney\n(http://kenney.nl)\n\nMareproduction\n(http://www.freesound.org/people/mareproduction)\n\nand\n\nOpenClipartVectors\n(https://pixabay.com/en/users/OpenClipartVectors-30363)\nfor CC0 assets.\n\n If you experience any bugs or weird things, please let me know or feel free to contribute. You can find me and the code on https://github.com/KeyWeeUsr"
                     size_hint_y: None
                     height: self.texture_size[1]
                     text_size: self.width, None
                     font_name: root.path+'/kenpixel_blocks.ttf'
             Widget:
+                size_hint_y: .1
             Buttlab:
                 font_name: root.path+'/kenpixel_blocks.ttf'
                 size_hint_y: None
@@ -154,9 +155,10 @@
             BoxVert:
                 Buttim:
                     source: 'sound.png'
+                    on_release: root.app.mc.stop() if root.app.mc.state == 'play' else root.app.mc.play()
                 Buttim:
                     source: 'quit.png'
-                    on_release: App().stop()
+                    on_release: root.app.stop()
             Widget:
             GridLayout:
                 cols: 3
