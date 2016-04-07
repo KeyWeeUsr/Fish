@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Fish - A simple eat&grow game situated in an ocean.
-# Version: 1.1
+# Version: 1.2
 # Copyright (C) 2016, KeyWeeUsr(Peter Badida) <keyweeusr@gmail.com>
 # License: GNU GPL v3.0
 #
@@ -45,6 +45,8 @@ class PlayerFish(Image):
     def __init__(self, **kwargs):
         self.app = App.get_running_app()
         self.app.pfish = self
+        self.eatsound = SoundLoader.load(self.app.path+'/eat.wav')
+        self.diesound = SoundLoader.load(self.app.path+'/die.wav')
         super(PlayerFish, self).__init__(**kwargs)
         Clock.schedule_interval(self.collision, 1/60.0)
 
@@ -53,6 +55,7 @@ class PlayerFish(Image):
             for i in self.fishd.values():
                 if self.collide_widget(i):
                     if self.body_size >= i.multiply:
+                        self.eatsound.play()
                         i.collision = 1
                         i.destroy()
                         self.eaten += 1
@@ -86,6 +89,7 @@ class PlayerFish(Image):
                                 self.app.gscr.ids.score.text
                             self.finish()
                     else:
+                        self.diesound.play()
                         Clock.schedule_interval(self.death, 1/60.0)
         else:
             Clock.unschedule(self.collision)
@@ -161,6 +165,7 @@ class GameScreen(Screen):
     def __init__(self, **kw):
         self.app = App.get_running_app()
         self.app.gscr = self
+        self.app.path = self.path
         super(GameScreen, self).__init__(**kw)
 
     def use(self, direction, active):
