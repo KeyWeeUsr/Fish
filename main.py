@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Fish - A simple eat&grow game situated in an ocean.
-# Version: 1.2
+# Version: 1.3
 # Copyright (C) 2016, KeyWeeUsr(Peter Badida) <keyweeusr@gmail.com>
 # License: GNU GPL v3.0
 #
@@ -63,6 +63,7 @@ class PlayerFish(Image):
                             self.app.gscr.ids.score.text) + i.multiply * 36)
                         self.app.gscr.ids.flit.add_widget(Image(
                             source='fish_s.png',
+                            color=(1, 0.4, 0.4, 1),
                             size_hint_x=None,
                             width=0.2*self.app.gscr.ids.flit.size[0]))
                         if self.eaten % 5 == 0:
@@ -75,13 +76,15 @@ class PlayerFish(Image):
                                 self.app.gscr.ids.flit.clear_widgets()
                                 self.app.gscr.ids.fmed.add_widget(Image(
                                     source='fish_m.png',
+                                    color=(1, 0.7, 0.7, 1),
                                     size_hint_x=None,
                                     width=0.2*self.app.gscr.ids.fmed.size[0]))
-                        elif self.eaten % 25 == 0:
+                        if self.eaten % 25 == 0:
                             if len(self.app.gscr.ids.fmed.children) > 4:
                                 self.app.gscr.ids.fmed.clear_widgets()
                                 self.app.gscr.ids.fbig.add_widget(Image(
                                     source='fish_l.png',
+                                    color=(1, 0.9, 0.9, 1),
                                     size_hint_x=None,
                                     width=0.2*self.app.gscr.ids.fbig.size[0]))
                         if self.body_size == 25:
