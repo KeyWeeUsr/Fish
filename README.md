@@ -6,7 +6,7 @@ Fish is a simple eat&grow game situated in an ocean. You'll play as a young fish
 ### Install
 
 Fish is written in Python and runs under Kivy framework.
-You can clone the repository to your /sdcard/kivy/ if you use Kivy Launcher on android or download only APK(https://github.com/KeyWeeUsr/Fish/releases/download/v1.3/Fish-1.3-RELEASE.apk). For using the APK you need to enable installation from "Unknown sources".
+You can clone the repository to your /sdcard/kivy/ if you use Kivy Launcher on android or download only [APK](https://github.com/KeyWeeUsr/Fish/releases/download/v1.3/Fish-1.3-RELEASE.apk). For using the APK you need to enable installation from "Unknown sources".
 If you use Windows, there is a [Setup](https://github.com/KeyWeeUsr/Fish/releases/download/v1.3/Fish-1.3-Setup.exe) file.
 
 ### About
